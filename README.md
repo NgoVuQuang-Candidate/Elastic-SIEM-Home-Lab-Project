@@ -76,6 +76,14 @@ Biểu đồ thể hiện sự gia tăng đột biến của các sự kiện đ
 <img width="2452" height="894" alt="image" src="https://github.com/user-attachments/assets/a79de8b4-9590-41f3-9a26-b63a40b9ee4b" />
 Alert chi tiết xác định chính xác IP kẻ tấn công (192.168.52.151) và tài khoản mục tiêu (ngovuquang).
 
+### Endpoint Enrollment Success
+<img width="857" height="354" alt="image" src="https://github.com/user-attachments/assets/9bdc3a8b-fc8b-4510-8a52-6f1baea7e0f8" />
+Cài đặt agent ở Endpoint là máy ảo Windows thành công
+
+### Brute Force Attack Simulation (Kali Linux)
+<img width="1674" height="306" alt="image" src="https://github.com/user-attachments/assets/c6252f92-61ca-4fac-b07d-5eb75b411e04" />
+Tiến hành mô phỏng tấn công brute-force bằng máy Kali Linux
+
 ## Key Findings & Lessons Learned
 
 + Security by Design: Việc tự cấu hình TLS/SSL giúp bảo mật dữ liệu log, ngăn chặn kẻ tấn công nghe lén trên đường truyền mạng.
