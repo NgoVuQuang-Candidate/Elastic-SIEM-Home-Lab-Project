@@ -1,31 +1,32 @@
-# ======================== Elasticsearch Configuration =========================
-# Project: SIEM Home Lab - Brute Force Detection
-# Role: SIEM Storage & Search Engine
+# ======================== Cấu hình Elasticsearch =========================
+# Dự án: SIEM Home Lab - Phát hiện tấn công Brute Force
+# Vai trò: Lưu trữ dữ liệu log và Công cụ tìm kiếm chính cho SIEM
 
 cluster.name: siem-lab
 node.name: siem-server
 
-# ----------------------------------- Paths ------------------------------------
+# ----------------------------------- Đường dẫn ------------------------------------
+# Nơi lưu trữ dữ liệu và nhật ký vận hành của Elasticsearch
 path.data: /var/lib/elasticsearch
 path.logs: /var/log/elasticsearch
 
-# ---------------------------------- Network -----------------------------------
-# Expose Elasticsearch to all network interfaces
+# ---------------------------------- Mạng -----------------------------------
+# Cấu hình để Elasticsearch có thể truy cập được từ các giao diện mạng khác nhau
 network.host: 0.0.0.0
 http.host: 0.0.0.0
 http.port: 9200
 
-# ----------------------- SECURITY AUTO CONFIGURATION -------------------------
-# Enabled security features for Fleet & Agent integration
+# ----------------------- CẤU HÌNH BẢO MẬT (SECURITY) -----------------------
+# Kích hoạt các tính năng bảo mật nội tại, bắt buộc để sử dụng Fleet và Agent
 xpack.security.enabled: true
 xpack.security.enrollment.enabled: true
 
-# Enable encryption for HTTP API client connections (Phase 4: HTTPS)
+# Kích hoạt mã hóa SSL/TLS cho lớp HTTP (Phase 4: Giao thức HTTPS)
 xpack.security.http.ssl:
   enabled: true
   keystore.path: certs/http.p12
 
-# Enable encryption and mutual authentication between cluster nodes
+# Kích hoạt SSL cho lớp Transport - giao tiếp giữa các node (Bắt buộc khi bật Security)
 xpack.security.transport.ssl:
   enabled: true
   verification_mode: certificate
@@ -33,6 +34,6 @@ xpack.security.transport.ssl:
   truststore.path: certs/transport.p12
 
 # --------------------------------- Discovery ----------------------------------
-# Setup as a single-node cluster for lab environment
+# Thiết lập chế độ chạy một Node duy nhất (Single-node) phù hợp cho môi trường Lab
 discovery.type: single-node
 cluster.initial_master_nodes: ["siem-server"]
