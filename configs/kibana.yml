@@ -1,0 +1,30 @@
+# =================== System: Kibana Server ===================
+server.port: 5601
+server.host: "0.0.0.0"
+server.publicBaseUrl: "http://192.168.52.10:5601"
+
+# =================== System: Elasticsearch ===================
+# Kết nối an toàn tới Elasticsearch qua giao thức HTTPS (Phase 4)
+elasticsearch.hosts: ["https://192.168.52.10:9200"]
+
+# Thông tin xác thực hệ thống (Đã ẩn mật khẩu để bảo mật)
+elasticsearch.username: "kibana_system"
+elasticsearch.password: "<REDACTED>"
+
+# Cấu hình lòng tin SSL giữa Kibana và Elasticsearch
+elasticsearch.ssl.certificateAuthorities: [ "/etc/kibana/elasticsearch-ca.pem" ]
+elasticsearch.ssl.verificationMode: full
+
+# =================== System: Logging ===================
+# Bật log debug để phục vụ quá trình Troubleshooting (Phase 1)
+logging.root.level: debug
+
+# =================== Security & Reporting ===================
+# Vô hiệu hóa Sandbox cho Chromium Headless (Sửa lỗi đứng log khởi động)
+xpack.screenshotting.browser.chromium.disableSandbox: true
+
+# Các mã khóa mã hóa bắt buộc cho Elastic Security (Phase 7)
+# Đã ẩn các chuỗi bí mật thật để đảm bảo an toàn khi công khai
+xpack.encryptedSavedObjects.encryptionKey: "<REDACTED_32_CHAR_STRING>"
+xpack.security.encryptionKey: "<REDACTED_32_CHAR_STRING>"
+xpack.reporting.encryptionKey: "<REDACTED_32_CHAR_STRING>"
