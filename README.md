@@ -1,5 +1,5 @@
 # Elastic-SIEM-Home-Lab-Project
-A comprehensive Home SIEM Lab setup using Elastic Stack 8.19.14 on Ubuntu Server to monitor and detect Brute Force attacks on a Windows VM.
+Triển khai hệ thống SIEM Lab toàn diện sử dụng Elastic Stack 8.19.14 trên Ubuntu Server nhằm giám sát và phát hiện các cuộc tấn công Brute Force vào máy ảo Windows.
 
 ## Project Overview:
 Dự án này triển khai một hệ thống SIEM tập trung sử dụng Elastic Stack 8.19.14 trên môi trường Lab ảo hóa. Mục tiêu chính là thu thập, phân tích Security Event Logs từ máy ảo Windows và tự động phát hiện các cuộc tấn công Brute Force thông qua RDP.
@@ -37,7 +37,9 @@ Dự án này triển khai một hệ thống SIEM tập trung sử dụng Elast
 
 ### Phase 8: Attack Simulation (The "Real" Test)
 
-  + Sử dụng công cụ Hydra trên Kali Linux để tấn công bẻ khóa RDP máy Windows: hydra -l ngovuquang -P pass.txt rdp://192.168.52.154 -t 1 -w 5 -V
+  + Sử dụng công cụ Hydra trên Kali Linux để tấn công bẻ khóa RDP máy Windows:
+
+```hydra -l ngovuquang -P pass.txt rdp://192.168.52.154 -t 1 -w 5 -V```
 
   + Kết quả: SIEM đã ghi nhận thành công 6 lần đăng nhập sai và kích hoạt Alert ngay lập tức.
 
