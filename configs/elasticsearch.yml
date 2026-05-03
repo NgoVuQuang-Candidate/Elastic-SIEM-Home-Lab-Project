@@ -1,0 +1,38 @@
+# ======================== Elasticsearch Configuration =========================
+# Project: SIEM Home Lab - Brute Force Detection
+# Role: SIEM Storage & Search Engine
+
+cluster.name: siem-lab
+node.name: siem-server
+
+# ----------------------------------- Paths ------------------------------------
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+
+# ---------------------------------- Network -----------------------------------
+# Expose Elasticsearch to all network interfaces
+network.host: 0.0.0.0
+http.host: 0.0.0.0
+http.port: 9200
+
+# ----------------------- SECURITY AUTO CONFIGURATION -------------------------
+# Enabled security features for Fleet & Agent integration
+xpack.security.enabled: true
+xpack.security.enrollment.enabled: true
+
+# Enable encryption for HTTP API client connections (Phase 4: HTTPS)
+xpack.security.http.ssl:
+  enabled: true
+  keystore.path: certs/http.p12
+
+# Enable encryption and mutual authentication between cluster nodes
+xpack.security.transport.ssl:
+  enabled: true
+  verification_mode: certificate
+  keystore.path: certs/transport.p12
+  truststore.path: certs/transport.p12
+
+# --------------------------------- Discovery ----------------------------------
+# Setup as a single-node cluster for lab environment
+discovery.type: single-node
+cluster.initial_master_nodes: ["siem-server"]
