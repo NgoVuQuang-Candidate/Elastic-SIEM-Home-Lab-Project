@@ -84,4 +84,4 @@ Alert chi tiết xác định chính xác IP kẻ tấn công (192.168.52.151) v
 
 + Optimization: Sử dụng tính năng Group by trong Rule giúp giảm thiểu báo động giả (False Positives) cho hệ thống.
 
-=> Để đảm bảo tính toàn vẹn dữ liệu giữa các thành phần, tôi đã cấu hình thủ công TLS cho Elasticsearch và Kibana. Tham khảo file cấu hình tại thư mục /configs, nơi tôi đã thiết lập các tham số về HTTPS và Certificate Authority nội bộ.
+=> Để đảm bảo tính toàn vẹn dữ liệu giữa các thành phần, tôi đã cấu hình thủ công TLS cho Elasticsearch và Kibana. Tham khảo file cấu hình và detection rule export từ Kibana tại thư mục /configs, nơi tôi đã thiết lập các tham số về HTTPS và Certificate Authority nội bộ.
